@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Precious Sunday | AI Automation Specialist and Digital Marketer</title>
+<meta name="description" content="Precious Sunday builds AI automations that save time, with a marketing and growth mindset. Based in Lagos, Nigeria. Working with businesses remotely.">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Precious Sunday | AI Automation Specialist and Digital Marketer">
+<meta property="og:description" content="AI automations that save time, built by someone who understands the marketing and growth side of the business.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: dark;
+    --bg: #15110e;
+    --bg-raised: #1d1814;
+    --text: #f1ece3;
+    --muted: #a89f92;
+    --line: #322b24;
+    --accent: #ff5a1f;
+    --accent-ink: #1a0d06;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --wrap: 1120px;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 14px; font-family: var(--display); font-weight: 800; z-index: 20; }
+  .skip:focus { left: 8px; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+    background: rgba(21, 17, 14, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .logo i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  nav.main { display: flex; align-items: center; gap: clamp(14px, 3vw, 30px); flex-wrap: wrap; }
+  nav.main a.link { font-family: var(--display); font-weight: 500; font-size: 0.98rem; color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav.main a.link:hover { color: var(--text); border-color: var(--accent); }
+  .btn {
+    display: inline-block; font-family: var(--display); font-weight: 800; font-size: 1rem;
+    background: var(--accent); color: var(--accent-ink); text-decoration: none;
+    padding: 12px 22px; border: 0; border-radius: 4px; cursor: pointer; line-height: 1.2;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { background: #ff7440; transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--text); border: 1.5px solid var(--line); }
+  .btn.ghost:hover { border-color: var(--accent); background: transparent; }
+
+  /* Hero */
+  .hero { padding: clamp(56px, 11vw, 120px) 0 clamp(56px, 9vw, 96px); position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; width: 640px; height: 640px; right: -220px; top: -260px;
+    background: radial-gradient(closest-side, rgba(255, 90, 31, 0.16), rgba(255, 90, 31, 0));
+    pointer-events: none;
+  }
+  .status { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 500; font-size: 0.95rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px 7px 12px; margin-bottom: 36px; }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    font-family: var(--display); font-weight: 800; margin: 0;
+    font-size: clamp(2.7rem, 8.6vw, 6.6rem); line-height: 0.96; letter-spacing: -0.035em; max-width: 14ch;
+  }
+  .hero h1 span { display: block; }
+  .lede { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: 1.35; color: var(--muted); max-width: 30ch; margin: 28px 0 0; }
+  .hero-actions { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .where { margin-top: 44px; color: var(--muted); font-size: 1rem; }
+
+  /* Sections */
+  section { padding: clamp(56px, 9vw, 104px) 0; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 18px; max-width: 18ch; }
+  h3 { font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 10px; line-height: 1.15; }
+  .intro { color: var(--muted); max-width: 52ch; margin: 0 0 clamp(36px, 6vw, 56px); }
+  .small { font-family: var(--display); font-weight: 500; font-size: 0.92rem; color: var(--muted); }
+
+  /* Services */
+  .tracks { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
+  .track { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 6px; padding: clamp(24px, 4vw, 40px); }
+  .track.lead { border-top: 4px solid var(--accent); }
+  .track p { margin: 0 0 16px; max-width: 46ch; }
+  .tools { list-style: none; padding: 0; margin: 20px 0 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tools li { font-family: var(--display); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; color: var(--muted); }
+  .examples { margin: 0 0 4px; padding-left: 1.1em; color: var(--muted); }
+  .examples li { margin-bottom: 4px; }
+
+  /* Demo */
+  .demo { margin-top: clamp(32px, 5vw, 56px); border: 1px dashed #4a3f35; border-radius: 6px; padding: clamp(22px, 4vw, 36px); }
+  .demo h3 { margin-bottom: 6px; }
+  .samples { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+  .sample {
+    text-align: left; font: inherit; font-size: 1.02rem; color: var(--text); background: transparent;
+    border: 1.5px solid var(--line); border-radius: 4px; padding: 12px 16px; cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .sample:hover { border-color: #6a5a4b; }
+  .sample[aria-pressed="true"] { border-color: var(--accent); background: rgba(255, 90, 31, 0.08); }
+  .result { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; min-height: 84px; }
+  .result div { background: var(--bg-raised); border-radius: 4px; padding: 12px 16px; border-left: 3px solid var(--line); transition: border-color .4s ease, opacity .4s ease; opacity: .45; }
+  .result.ready div { border-left-color: var(--accent); opacity: 1; }
+  .result dt { font-family: var(--display); font-weight: 500; font-size: .85rem; color: var(--muted); }
+  .result dd { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: 1.08rem; line-height: 1.25; }
+
+  /* Projects */
+  .projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .projects li { display: grid; grid-template-columns: 1fr auto; gap: 10px 24px; padding: 26px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .projects p { margin: 0; color: var(--muted); max-width: 52ch; }
+  .tag { font-family: var(--display); font-weight: 500; font-size: .88rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 3px 14px; white-space: nowrap; }
+  .note { margin-top: 24px; color: var(--muted); font-style: italic; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+  .about-grid p { margin: 0 0 18px; max-width: 46ch; }
+  .help { list-style: none; padding: 0; margin: 28px 0 0; }
+  .help li { padding: 10px 0 10px 28px; position: relative; border-top: 1px solid var(--line); }
+  .help li::before { content: ""; position: absolute; left: 4px; top: 21px; width: 10px; height: 2px; background: var(--accent); }
+  .timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 2px solid var(--line); }
+  .timeline li { position: relative; padding-bottom: 34px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before { content: ""; position: absolute; left: -33px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .timeline .when { font-family: var(--display); font-weight: 500; font-size: .92rem; color: var(--accent); }
+  .timeline h3 { margin: 2px 0 6px; font-size: 1.3rem; }
+  .timeline p { margin: 0; color: var(--muted); }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6vw, 80px); }
+  form { display: grid; gap: 22px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  label, legend { font-family: var(--display); font-weight: 500; font-size: .95rem; color: var(--muted); display: block; padding: 0; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%; margin-top: 6px; font: inherit; color: var(--text); background: var(--bg-raised);
+    border: 1.5px solid var(--line); border-radius: 4px; padding: 12px 14px;
+  }
+  textarea { min-height: 130px; resize: vertical; }
+  input::placeholder, textarea::placeholder { color: #756c60; }
+  fieldset { border: 0; margin: 0; padding: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips label { cursor: pointer; border: 1.5px solid var(--line); border-radius: 999px; padding: 8px 18px; color: var(--text); font-size: .98rem; }
+  .chips input:checked + label { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 800; }
+  .chips input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .form-status { min-height: 1.6em; color: var(--muted); margin: 0; }
+  .direct a { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.3rem, 3vw, 1.7rem); letter-spacing: -0.02em; text-decoration: none; padding: 18px 0; border-top: 1px solid var(--line); word-break: break-word; }
+  .direct a:last-of-type { border-bottom: 1px solid var(--line); }
+  .direct a:hover { color: var(--accent); }
+  .direct small { display: block; font-family: var(--display); font-weight: 500; font-size: .88rem; color: var(--muted); margin-bottom: 2px; letter-spacing: 0; }
+  .copy { margin-top: 18px; }
+
+  footer.site { border-top: 1px solid var(--line); padding: 34px 0 44px; color: var(--muted); font-size: .98rem; }
+  footer.site .wrap { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+
+  /* One page-load moment */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 span { opacity: 0; transform: translateY(18px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .hero h1 span:nth-child(2) { animation-delay: .12s; }
+    .hero h1 span:nth-child(3) { animation-delay: .24s; }
+    .hero .lede { opacity: 0; animation: fade .8s .5s ease forwards; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    @keyframes fade { to { opacity: 1; } }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  @media (max-width: 860px) {
+    .tracks, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .result { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; }
+    .projects li { grid-template-columns: 1fr; }
+    .bar { padding-top: 10px; padding-bottom: 10px; }
+    nav.main { width: 100%; justify-content: space-between; gap: 10px; }
+    nav.main a.link { font-size: .92rem; }
+    .btn.nav-cta { padding: 9px 14px; font-size: .92rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Precious Sunday, back to top">Precious Sunday <i aria-hidden="true"></i></a>
+    <nav class="main" aria-label="Main">
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#projects">Projects</a>
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#contact">Contact</a>
+      <a class="btn nav-cta" href="#contact">Work with me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
+    <div class="wrap">
+      <p class="status"><i aria-hidden="true"></i> Open to AI automation and marketing projects</p>
+      <h1><span>I build AI</span> <span>automations</span> <span>that save time.</span></h1>
+      <p class="lede">And I understand the marketing and growth side of the business they serve.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Work with me</a>
+        <a class="btn ghost" href="#services">See what I do</a>
+      </div>
+      <p class="where">Based in Lagos, Nigeria. Working with businesses remotely.</p>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Automation first. Marketing as the edge.</h2>
+      <p class="intro">Most small businesses have two problems at once: too much repetitive work, and not enough of the right customers. I work on both.</p>
+
+      <div class="tracks">
+        <article class="track lead">
+          <h3>AI automation</h3>
+          <p>I design workflows that take repetitive work off your team's hands and make sure the right information reaches the right person, fast.</p>
+          <ul class="examples">
+            <li>Customer complaint and ticket routing</li>
+            <li>Reporting and alerts</li>
+            <li>Repetitive task automation</li>
+          </ul>
+          <ul class="tools" aria-label="Tools">
+            <li>n8n</li><li>Make.com</li><li>Zapier</li><li>AI models</li>
+          </ul>
+          <a class="btn" href="#contact" data-interest="AI automation">Work with me</a>
+        </article>
+
+        <article class="track">
+          <h3>Digital marketing</h3>
+          <p>SEO, search ads, copywriting and analytics for small brands, so the time you save goes towards growth.</p>
+          <ul class="tools" aria-label="Skills">
+            <li>SEO</li><li>SEM</li><li>Copywriting</li><li>Analytics</li>
+          </ul>
+          <a class="btn ghost" href="#contact" data-interest="Digital marketing">Work with me</a>
+        </article>
+      </div>
+
+      <div class="demo" aria-labelledby="demo-title">
+        <h3 id="demo-title">Try the idea: complaint routing</h3>
+        <p class="small">Pick a sample complaint and see how a routing workflow would read it, label it and send it on. These samples are written for illustration. A real workflow uses your own data and rules.</p>
+        <div class="samples" role="group" aria-label="Sample complaints">
+          <button type="button" class="sample" aria-pressed="false" data-i="0">"I was debited twice for one transfer and nobody has called me back."</button>
+          <button type="button" class="sample" aria-pressed="false" data-i="1">"The mobile app keeps crashing every time I try to log in."</button>
+          <button type="button" class="sample" aria-pressed="false" data-i="2">"How do I update the phone number on my account?"</button>
+        </div>
+        <dl class="result" id="result" aria-live="polite">
+          <div><dt>Type</dt><dd id="r-type">Waiting for a complaint</dd></div>
+          <div><dt>Urgency</dt><dd id="r-urg">Not set</dd></div>
+          <div><dt>Sent to</dt><dd id="r-team">Not set</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>What I'm building</h2>
+      <p class="intro">Full case studies will appear here as each project is finished, with the problem, how I built it, the tools and the result.</p>
+      <ul class="projects">
+        <li>
+          <div>
+            <h3>AI customer complaint routing</h3>
+            <p>An n8n workflow that uses AI to classify incoming customer complaints and route them to the right team.</p>
+          </div>
+          <span class="tag">Case study coming soon</span>
+        </li>
+        <li>
+          <div>
+            <h3>Contact center downtime detection</h3>
+            <p>An n8n workflow that watches complaint volume and sends an alert when a spike suggests something is down.</p>
+          </div>
+          <span class="tag">Case study coming soon</span>
+        </li>
+        <li>
+          <div>
+            <h3>Digital marketing pilot for a clothing brand</h3>
+            <p>SEO, search ads, copywriting and analytics applied to a live pilot with a clothing brand.</p>
+          </div>
+          <span class="tag">Case study coming soon</span>
+        </li>
+      </ul>
+      <p class="note">New case studies are added as I complete them.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>How I got here</h2>
+      <div class="about-grid">
+        <div>
+          <p>I started on the front line, answering customers at a bank's contact center. Then I moved into quality, scoring interactions and checking compliance. From that seat, I could see exactly where time and quality were being lost.</p>
+          <p>Now I build automations that fix those problems, and I bring a marketing mindset to them: the point is a better result for the business, not a clever workflow.</p>
+          <p>From the front line of customer care, to quality, to automation.</p>
+          <h3 style="margin-top:34px">What I can help with</h3>
+          <ul class="help">
+            <li>Automating repetitive workflows</li>
+            <li>Complaint and ticket routing</li>
+            <li>Reporting and alerts</li>
+            <li>SEO and content for small brands</li>
+          </ul>
+        </div>
+        <ol class="timeline" aria-label="Work history, newest first">
+          <li>
+            <span class="when">2025 to present</span>
+            <h3>QA Analyst</h3>
+            <p>Banking contact center. Scoring customer interactions, running compliance checks, and spotting recurring complaint patterns that waste time and hurt customers.</p>
+          </li>
+          <li>
+            <span class="when">2024 to 2025</span>
+            <h3>Customer Care Agent</h3>
+            <p>Banking contact center. Handled customer enquiries and complaints directly, which taught me what customers actually struggle with.</p>
+          </li>
+          <li>
+            <span class="when">Now</span>
+            <h3>AI automation training and projects</h3>
+            <p>Building workflows with n8n, Make.com, Zapier and AI, including complaint routing and volume alerting for contact center operations.</p>
+          </li>
+          <li>
+            <span class="when">Now</span>
+            <h3>Digital marketing</h3>
+            <p>Applying SEO, SEM, copywriting and analytics on a live pilot for a clothing brand.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Tell me what to automate or grow</h2>
+      <p class="intro">A sentence or two is plenty. I'll reply by email.</p>
+      <div class="contact-grid">
+        <form id="contact-form" novalidate>
+          <div class="row">
+            <div><label for="name">Name</label><input id="name" type="text" autocomplete="name" placeholder="Your name"></div>
+            <div><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@company.com"></div>
+          </div>
+          <fieldset>
+            <legend>I'm interested in</legend>
+            <div class="chips">
+              <input type="radio" name="interest" id="i1" value="AI automation" checked><label for="i1">AI automation</label>
+              <input type="radio" name="interest" id="i2" value="Digital marketing"><label for="i2">Digital marketing</label>
+              <input type="radio" name="interest" id="i3" value="Both"><label for="i3">Both</label>
+            </div>
+          </fieldset>
+          <div><label for="msg">What should we automate or grow?</label><textarea id="msg" placeholder="A sentence or two is plenty."></textarea></div>
+          <div><button class="btn" type="submit">Send message</button></div>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+
+        <div class="direct">
+          <a href="mailto:preciouschijindu76@gmail.com"><small>Email</small>preciouschijindu76@gmail.com</a>
+          <a href="https://www.linkedin.com/in/precious-sunday-b439b827b" target="_blank" rel="noopener"><small>LinkedIn</small>Precious Sunday</a>
+          <button type="button" class="btn ghost copy" id="copy-email">Copy my email</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Precious Sunday (also known as Precious Chijindu)</span>
+    <span>Lagos, Nigeria</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var EMAIL = "preciouschijindu76@gmail.com";
+
+  // Complaint routing demo
+  var samples = [
+    { type: "Transaction dispute", urg: "High", team: "Transactions team" },
+    { type: "Technical issue", urg: "Medium", team: "Digital channels support" },
+    { type: "Service request", urg: "Low", team: "Customer service desk" }
+  ];
+  var buttons = document.querySelectorAll(".sample");
+  var result = document.getElementById("result");
+  var rType = document.getElementById("r-type");
+  var rUrg = document.getElementById("r-urg");
+  var rTeam = document.getElementById("r-team");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      buttons.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      var s = samples[Number(b.getAttribute("data-i"))];
+      result.classList.remove("ready");
+      rType.textContent = s.type; rUrg.textContent = s.urg; rTeam.textContent = s.team;
+      void result.offsetWidth;
+      result.classList.add("ready");
+    });
+  });
+
+  // Preselect interest from service buttons
+  document.querySelectorAll("[data-interest]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var v = a.getAttribute("data-interest");
+      document.querySelectorAll('input[name="interest"]').forEach(function (r) { r.checked = (r.value === v); });
+    });
+  });
+
+  // Contact form: opens the visitor's email app with the message filled in
+  var form = document.getElementById("contact-form");
+  var status = document.getElementById("form-status");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var msg = document.getElementById("msg").value.trim();
+    var interest = form.querySelector('input[name="interest"]:checked').value;
+    if (!name || !email || !msg) {
+      status.textContent = "Please fill in your name, email and a short message.";
+      return;
+    }
+    if (email.indexOf("@") < 1) {
+      status.textContent = "That email address doesn't look right. Please check it.";
+      return;
+    }
+    var subject = "Project enquiry (" + interest + ") from " + name;
+    var body = msg + "\n\nName: " + name + "\nEmail: " + email + "\nInterested in: " + interest;
+    status.textContent = "Opening your email app. If nothing opens, email me directly at " + EMAIL + ".";
+    window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+
+  // Copy email fallback
+  var copyBtn = document.getElementById("copy-email");
+  copyBtn.addEventListener("click", function () {
+    function done(ok) { copyBtn.textContent = ok ? "Email copied" : EMAIL; setTimeout(function () { copyBtn.textContent = "Copy my email"; }, 2600); }
+    try {
+      navigator.clipboard.writeText(EMAIL).then(function () { done(true); }, function () { done(false); });
+    } catch (err) { done(false); }
+  });
+})();
+</script>
+</body>
+</html>
